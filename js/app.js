@@ -5,7 +5,11 @@ let bmiData = null;
 
 // 초기화
 document.addEventListener('DOMContentLoaded', async () => {
-    await i18n.initI18n();
+    try {
+        await i18n.initI18n();
+    } catch (e) {
+        console.warn('i18n init failed:', e);
+    }
     hideLoader();
     setupEventListeners();
     loadHistory();
