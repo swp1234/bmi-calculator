@@ -3,6 +3,21 @@
 let currentUnit = 'metric';
 let bmiData = null;
 
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
+    });
+}
+
 // 초기화
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -13,6 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     hideLoader();
     setupEventListeners();
     loadHistory();
+    calculateBMI();
 });
 
 // 이벤트 리스너 설정
@@ -137,7 +153,7 @@ function calculateBMI() {
         height: height,
         weight: weight,
         unit: currentUnit,
-        timestamp: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })
+        timestamp: new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })
     };
 
     displayResults(bmi, height, weight);
@@ -308,7 +324,7 @@ function addToHistory(bmi, height, weight) {
         height: height,
         weight: weight,
         unit: currentUnit,
-        date: new Date().toLocaleString('ko-KR')
+        date: new Date().toLocaleString()
     };
 
     history.unshift(entry);
@@ -336,7 +352,7 @@ function loadHistory() {
                     BMI: <strong>${entry.bmi.toFixed(1)}</strong>
                     (${entry.height.toFixed(1)} ${unit.split('/')[0]} / ${entry.weight.toFixed(1)} ${unit.split('/')[1]})
                 </span>
-                <span class="history-item-time">${new Date(entry.date).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
+                <span class="history-item-time">${new Date(entry.date).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}</span>
             </div>
         `;
     }).join('');
