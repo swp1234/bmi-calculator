@@ -297,14 +297,22 @@
                 navigator.share({ title: shareTitle, url }).catch(() => {});
             } else {
                 navigator.clipboard.writeText(url).then(() => {
-                    typeof showToast === 'function' ? showToast('링크 복사됨!') : alert('링크가 복사되었습니다!');
+                    typeof showToast === 'function' ? showToast('링크 복사됨!') : alert(window.i18n && i18n.t ? (i18n.t('share.linkCopied') || '링크가 복사되었습니다!') : '링크가 복사되었습니다!');
                 }).catch(() => { prompt('Copy:', url); });
             }
         }
         function shareTwitter() {
             const bmiVal = document.getElementById('bmi-value') ? document.getElementById('bmi-value').textContent : '';
             const statusText = document.getElementById('status-text') ? document.getElementById('status-text').textContent : '';
-            const tweetText = bmiVal ? 'My BMI is ' + bmiVal + ' (' + statusText + ') - DopaBrain BMI Calculator' : document.title + ' - DopaBrain';
+            let tweetText;
+            if (bmiVal && window.i18n && i18n.t) {
+                const template = i18n.t('share.twitterText');
+                tweetText = template && template !== 'share.twitterText'
+                    ? template.replace('{bmi}', bmiVal)
+                    : 'My BMI is ' + bmiVal + ' (' + statusText + ') - DopaBrain BMI Calculator';
+            } else {
+                tweetText = document.title + ' - DopaBrain';
+            }
             const url = encodeURIComponent(window.location.href);
             const text = encodeURIComponent(tweetText);
             window.open('https://twitter.com/intent/tweet?url=' + url + '&text=' + text, '_blank');
