@@ -866,6 +866,7 @@ input:focus-visible,
 /* Light Theme */
 [data-theme="light"] {
     --primary-color: #00b894;
+    --text: #1a1a2e;
 }
 
 [data-theme="light"] body {
