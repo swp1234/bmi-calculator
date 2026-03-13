@@ -53,5 +53,12 @@
     "copied": "Kopyalandı!",
     "twitterText": "BMI'm {bmi}! DopaBrain'de ücretsiz ölçün",
     "linkCopied": "Bağlantı kopyalandı!"
+  },
+  "related": {
+    "title": "Daha fazla keşfet",
+    "biorhythm": "Biyoritm",
+    "lifeInNumbers": "Sayılarla Hayat",
+    "stressCheck": "Stres Testi",
+    "habitTracker": "Alışkanlık Takipçisi"
   }
 }

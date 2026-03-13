@@ -53,5 +53,12 @@
     "copied": "Copied!",
     "twitterText": "My BMI is {bmi}! Measure yours free at DopaBrain",
     "linkCopied": "Link copied!"
+  },
+  "related": {
+    "title": "More to Explore",
+    "biorhythm": "Biorhythm",
+    "lifeInNumbers": "Life in Numbers",
+    "stressCheck": "Stress Check",
+    "habitTracker": "Habit Tracker"
   }
 }

@@ -53,5 +53,12 @@
     "copied": "Disalin!",
     "twitterText": "BMI saya {bmi}! Ukur milikmu gratis di DopaBrain",
     "linkCopied": "Tautan disalin!"
+  },
+  "related": {
+    "title": "Jelajahi lainnya",
+    "biorhythm": "Biorhythm",
+    "lifeInNumbers": "Hidup dalam Angka",
+    "stressCheck": "Cek Stres",
+    "habitTracker": "Pelacak Kebiasaan"
   }
 }

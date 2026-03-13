@@ -53,5 +53,12 @@
     "copied": "コピーしました！",
     "twitterText": "私のBMIは{bmi}です！DopaBrainで無料計測",
     "linkCopied": "リンクをコピーしました！"
+  },
+  "related": {
+    "title": "もっと楽しむ",
+    "biorhythm": "バイオリズム",
+    "lifeInNumbers": "数字で見る人生",
+    "stressCheck": "ストレスチェック",
+    "habitTracker": "習慣トラッカー"
   }
 }

@@ -53,5 +53,12 @@
     "copied": "Скопировано!",
     "twitterText": "Мой ИМТ: {bmi}! Измерьте свой бесплатно на DopaBrain",
     "linkCopied": "Ссылка скопирована!"
+  },
+  "related": {
+    "title": "Ещё интересное",
+    "biorhythm": "Биоритм",
+    "lifeInNumbers": "Жизнь в числах",
+    "stressCheck": "Тест на стресс",
+    "habitTracker": "Трекер привычек"
   }
 }

@@ -53,5 +53,12 @@
     "copied": "Copié!",
     "twitterText": "Mon IMC est {bmi}! Mesurez le vôtre gratuitement sur DopaBrain",
     "linkCopied": "Lien copié!"
+  },
+  "related": {
+    "title": "À découvrir",
+    "biorhythm": "Biorythme",
+    "lifeInNumbers": "La vie en chiffres",
+    "stressCheck": "Test de stress",
+    "habitTracker": "Suivi d'habitudes"
   }
 }

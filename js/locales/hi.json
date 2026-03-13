@@ -53,5 +53,12 @@
     "copied": "कॉपी किया गया!",
     "twitterText": "मेरा BMI {bmi} है! DopaBrain पर मुफ्त में मापें",
     "linkCopied": "लिंक कॉपी किया गया!"
+  },
+  "related": {
+    "title": "और खोजें",
+    "biorhythm": "बायोरिदम",
+    "lifeInNumbers": "संख्याओं में जीवन",
+    "stressCheck": "तनाव जांच",
+    "habitTracker": "आदत ट्रैकर"
   }
 }

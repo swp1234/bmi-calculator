@@ -53,5 +53,12 @@
     "copied": "Kopiert!",
     "twitterText": "Mein BMI ist {bmi}! Kostenlos auf DopaBrain messen",
     "linkCopied": "Link kopiert!"
+  },
+  "related": {
+    "title": "Mehr entdecken",
+    "biorhythm": "Biorhythmus",
+    "lifeInNumbers": "Leben in Zahlen",
+    "stressCheck": "Stresstest",
+    "habitTracker": "Gewohnheitstracker"
   }
 }
