@@ -5,10 +5,16 @@ class I18n {
         this.translations = {};
         this.supportedLanguages = ['ko', 'en', 'zh', 'hi', 'ru', 'ja', 'es', 'pt', 'id', 'tr', 'de', 'fr'];
         this.currentLang = this.detectLanguage();
+        document.documentElement.lang = this.currentLang;
     }
 
     // 브라우저 언어 감지 또는 저장된 언어 로드
     detectLanguage() {
+        try {
+            const params = new URLSearchParams(window.location.search || '');
+            const urlLang = params.get('lang');
+            if (urlLang && this.supportedLanguages.includes(urlLang)) return urlLang;
+        } catch (error) {}
         const saved = localStorage.getItem('selectedLanguage');
         if (saved && this.supportedLanguages.includes(saved)) {
             return saved;
