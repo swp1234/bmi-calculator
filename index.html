@@ -7,7 +7,7 @@
     <meta name="robots" content="max-image-preview:large">
     <title>BMI Calculator - Free Body Mass Index Check | DopaBrain</title>
     <meta name="description" content="Instant BMI calculator — enter your height and weight to get your Body Mass Index, health classification, ideal weight range, and wellness tips. Try free!">
-    <meta name="dateModified" content="2026-07-07">
+    <meta name="dateModified" content="2026-10-24">
     <meta name="keywords" content="BMI 계산기, 체질량지수, 체중 관리, 건강, 신체 지수, 이상적 체중, 건강 정보, 피트니스, 건강 계산기">
     <link rel="canonical" href="https://dopabrain.com/bmi-calculator/">
     <meta name="theme-color" content="#e74c3c">
@@ -18,8 +18,7 @@
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8GSWM40TV"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J8GSWM40TV');</script>
-<script>setTimeout(function(){if(typeof gtag!=='undefined')gtag('event','page_engage',{event_category:'bmi_calculator',engagement_time_msec:5000})},5000);</script>
-    <!-- Open Graph & Social Media Tags -->
+<!-- Open Graph & Social Media Tags -->
     <meta property="og:title" content="BMI Calculator - Free Body Mass Index Check | DopaBrain">
     <meta property="og:description" content="Enter height and weight to instantly calculate your BMI, health status, and ideal weight range. Free!">
     <meta property="og:type" content="website">
@@ -55,91 +54,49 @@
     <link rel="alternate" hreflang="x-default" href="https://dopabrain.com/bmi-calculator/">
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "BMI Calculator",
-      "description": "Free online BMI calculator. Enter height and weight to get your Body Mass Index, health classification, ideal weight range, and wellness tips.",
-      "url": "https://dopabrain.com/bmi-calculator/",
-      "image": "https://dopabrain.com/bmi-calculator/icon-512.svg",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
-      "inLanguage": ["ko", "en", "zh", "hi", "ru", "ja", "es", "pt", "id", "tr", "de", "fr"],
-      "author": {
-        "@type": "Organization",
-        "name": "DopaBrain",
-        "url": "https://dopabrain.com/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "DopaBrain",
-        "url": "https://dopabrain.com/"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "ratingCount": "2340",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How is BMI calculated?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "BMI (Body Mass Index) is calculated by dividing your weight in kilograms by the square of your height in meters: BMI = weight (kg) / height (m)². This calculator supports both metric (kg/cm) and imperial (lb/ft) units."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the BMI Calculator free to use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, this BMI Calculator is completely free. No registration or payment required — just enter your height and weight to get instant results with health classification and ideal weight range."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a healthy BMI range?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "According to WHO standards, a normal BMI range is 18.5 to 24.9. Below 18.5 is underweight, 25.0–29.9 is overweight, and 30.0 or above is classified as obese. This calculator shows your category and ideal weight range."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does BMI account for muscle mass?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "BMI does not distinguish between muscle and fat mass. Athletes or highly muscular individuals may have a high BMI while being healthy. BMI is a general screening tool — consult a healthcare professional for a complete assessment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I track my BMI history?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, this calculator saves your recent calculations locally in your browser. You can view your BMI history and track changes over time without creating an account."
-          }
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Calculator",
+  "description": "Free online BMI calculator. Enter height and weight to get your Body Mass Index, health classification, ideal weight range, and wellness tips.",
+  "url": "https://dopabrain.com/bmi-calculator/",
+  "image": "https://dopabrain.com/bmi-calculator/icon-512.svg",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
+  "inLanguage": [
+    "ko",
+    "en",
+    "zh",
+    "hi",
+    "ru",
+    "ja",
+    "es",
+    "pt",
+    "id",
+    "tr",
+    "de",
+    "fr"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "DopaBrain",
+    "url": "https://dopabrain.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DopaBrain",
+    "url": "https://dopabrain.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+        <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
