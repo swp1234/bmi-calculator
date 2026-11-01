@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
     loadHistory();
     calculateBMI();
+    preserveLanguageLinks();
 });
 
 // 이벤트 리스너 설정
@@ -434,6 +435,35 @@ function updateUI() {
         element.textContent = i18n.t(key);
     });
     loadHistory();
+    preserveLanguageLinks();
+}
+
+function preserveLanguageLinks() {
+    try {
+        const lang = (window.i18n && window.i18n.currentLang) || new URLSearchParams(window.location.search).get('lang') || 'en';
+        document.querySelectorAll('.related-card, a[href^="/biorhythm/"], a[href^="/life-in-numbers/"], a[href^="/stress-check/"], a[href^="/detox-timer/"]').forEach(function(a) {
+            const href = a.getAttribute('href');
+            if (!href || href.startsWith('/portal/')) return;
+            const url = new URL(href, window.location.origin);
+            if (lang) {
+                url.searchParams.set('lang', lang);
+            }
+            url.searchParams.set('source', 'bmi_calculator_result');
+            a.setAttribute('href', url.pathname + url.search + url.hash);
+
+            if (!a.__ctaBound) {
+                a.__ctaBound = true;
+                a.addEventListener('click', function() {
+                    recordGA4Event('content_cta_click', {
+                        cta_surface: 'related_tools',
+                        destination: a.getAttribute('href'),
+                        source: 'bmi_calculator_result',
+                        lang: lang || 'en'
+                    });
+                });
+            }
+        });
+    } catch (e) {}
 }
 
 // GA4 이벤트 기록
@@ -443,7 +473,7 @@ function recordGA4Event(eventName, params = {}) {
     }
 }
 
-// GA4 engagement tracking (scroll + timer)
+// GA4 engagement tracking (scroll)
 (function() {
     let scrollFired = false;
     window.addEventListener('scroll', function() {
@@ -452,7 +482,4 @@ function recordGA4Event(eventName, params = {}) {
             if (typeof gtag === 'function') gtag('event', 'scroll_engagement', { engagement_type: 'scroll' });
         }
     }, { passive: true });
-    setTimeout(function() {
-        if (typeof gtag === 'function') gtag('event', 'timer_engagement', { engagement_time_msec: 5000 });
-    }, 5000);
 })();
