@@ -61,5 +61,30 @@
     "stressCheck": "Stresstest",
     "habitTracker": "Gewohnheitstracker",
     "detoxTimer": "Detox-Timer"
+  },
+  "about": {
+    "summaryTitle": "BMI-Gesundheitsleitfaden: Formel, WHO-Klassen & FAQ",
+    "formulaDesc": "Der Body-Mass-Index (BMI) ist ein weltweit anerkannter Richtwert nach der Formel: Gewicht (kg) / [Größe (m)]².",
+    "boundary": "Medizinischer Hinweis: Der BMI ist ein statistischer Screening-Wert und ersetzt keine ärztliche Diagnose oder Körperfettanalyse.",
+    "categoriesHeading": "WHO-Klassifikation für Erwachsene",
+    "catUnderweight": "Untergewicht (< 18.5):",
+    "descUnderweight": "Kann auf Nährstoffmangel oder verminderte Knochendichte hinweisen.",
+    "catNormal": "Normalgewicht (18.5 – 24.9):",
+    "descNormal": "Geringstes statistisches Risiko für kardiovaskuläre und metabolische Erkrankungen.",
+    "catOverweight": "Übergewicht (25.0 – 29.9):",
+    "descOverweight": "Erhöhte Neigung zu Bluthochdruck und Stoffwechselbelastung.",
+    "catObese": "Adipositas (≥ 30.0):",
+    "descObese": "Deutliche Korrelation mit Typ-2-Diabetes und Gelenkbelastungen.",
+    "faqTitle": "Häufig gestellte Fragen (FAQ)",
+    "faq1Q": "Q: Wie wird der BMI berechnet?",
+    "faq1A": "A: Körpergewicht in kg geteilt durch Körpergröße in Metern zum Quadrat (kg/m²).",
+    "faq2Q": "Q: Warum unterscheidet der BMI nicht zwischen Fett und Muskeln?",
+    "faq2A": "A: Weil er nur das Gesamtgewicht erfasst. Kraftsportler mit hoher Muskelmasse können fälschlich als übergewichtig eingestuft werden.",
+    "faq3Q": "Q: Welche ergänzenden Messungen sind sinnvoll?",
+    "faq3A": "A: Der Taillenumfang und das Taille-zu-Größe-Verhältnis (WHtR) liefern wertvolle Einblicke in das viszerale Bauchfett.",
+    "faq4Q": "Q: Werden meine Körperdaten gespeichert?",
+    "faq4A": "A: Niemals. Die Berechnung erfolgt rein lokal und privat in Ihrem Browser.",
+    "reviewDate": "Redaktionelle Prüfung: November 2026",
+    "reviewTeam": "DopaBrain Gesundheitsteam"
   }
 }

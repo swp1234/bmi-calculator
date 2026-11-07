@@ -61,5 +61,30 @@
     "stressCheck": "Stress Check",
     "habitTracker": "Habit Tracker",
     "detoxTimer": "Detox Timer"
+  },
+  "about": {
+    "summaryTitle": "About BMI: Formula, Health Classification & FAQ",
+    "formulaDesc": "Body Mass Index (BMI) is an international screening metric developed by statistician Adolphe Quetelet. It estimates weight relative to height using the formula BMI = weight (kg) / [height (m)]².",
+    "boundary": "Medical Note: BMI is an informational screening ratio and does not constitute clinical medical diagnosis, body fat percentage measurement, or cardiovascular risk assessment. Consult a licensed healthcare provider for individualized health advice.",
+    "categoriesHeading": "WHO BMI Categories for Adults",
+    "catUnderweight": "Underweight (< 18.5):",
+    "descUnderweight": "May indicate malnutrition, nutritional deficiency, or underlying physiological concerns.",
+    "catNormal": "Normal Weight (18.5 – 24.9):",
+    "descNormal": "Associated with lower statistical risk of chronic cardiovascular and metabolic diseases.",
+    "catOverweight": "Overweight (25.0 – 29.9):",
+    "descOverweight": "Increased likelihood of elevated blood pressure and metabolic strain.",
+    "catObese": "Obese (≥ 30.0):",
+    "descObese": "Significant clinical correlation with type 2 diabetes, joint stress, and cardiovascular issues.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Q": "Q: How is BMI calculated?",
+    "faq1A": "A: BMI divides weight in kilograms by height in meters squared (kg/m²), or in imperial units, pounds multiplied by 703 divided by inches squared.",
+    "faq2Q": "Q: Why doesn't BMI reflect body fat percentage?",
+    "faq2A": "A: BMI cannot distinguish between lean muscle mass and fat tissue. An athlete with high skeletal muscle density may have a high BMI without excess adiposity.",
+    "faq3Q": "Q: What is a healthy waist-to-height ratio alternative?",
+    "faq3A": "A: Many clinicians supplement BMI with waist circumference or waist-to-height ratio (keeping waist under half your height) to assess visceral abdominal fat.",
+    "faq4Q": "Q: Is my entered height and weight saved anywhere?",
+    "faq4A": "A: Never. Calculations occur 100% locally on your device within your browser. No private biometric data is logged or sent to external servers.",
+    "reviewDate": "Editorial Review: November 2026",
+    "reviewTeam": "DopaBrain Health & Physiology Team"
   }
 }

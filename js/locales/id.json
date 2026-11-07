@@ -61,5 +61,30 @@
     "stressCheck": "Cek Stres",
     "habitTracker": "Pelacak Kebiasaan",
     "detoxTimer": "Timer Detoks"
+  },
+  "about": {
+    "summaryTitle": "Panduan Kesehatan BMI: Rumus, Klasifikasi WHO & FAQ",
+    "formulaDesc": "Indeks Massa Tubuh (BMI) adalah rasio skrining internasional dengan rumus: berat badan (kg) / [tinggi badan (m)]².",
+    "boundary": "Catatan Medis: BMI adalah panduan umum untuk skrining awal dan bukan merupakan diagnosis medis klinis atau pengukuran persentase lemak tubuh.",
+    "categoriesHeading": "Kategori BMI Dewasa menurut WHO",
+    "catUnderweight": "Berat Badan Kurang (< 18.5):",
+    "descUnderweight": "Bisa mengindikasikan malnutrisi atau daya tahan tubuh yang rentan.",
+    "catNormal": "Berat Badan Normal (18.5 – 24.9):",
+    "descNormal": "Rentang dengan risiko statistik terendah terhadap penyakit metabolik kronis.",
+    "catOverweight": "Kelebihan Berat Badan (25.0 – 29.9):",
+    "descOverweight": "Kecenderungan peningkatan tekanan darah dan beban metabolik.",
+    "catObese": "Obesitas (≥ 30.0):",
+    "descObese": "Korelasi kuat dengan risiko diabetes tipe 2 dan gangguan sendi.",
+    "faqTitle": "Pertanyaan Umum (FAQ)",
+    "faq1Q": "Q: Bagaimana rumus hitung BMI?",
+    "faq1A": "A: Berat badan dalam kilogram dibagi kuadrat tinggi badan dalam meter (kg/m²).",
+    "faq2Q": "Q: Mengapa BMI tidak membedakan otot dan lemak?",
+    "faq2A": "A: BMI hanya melihat massa total. Orang berotot padat bisa masuk kategori kelebihan berat badan tanpa memiliki lemak berlebih.",
+    "faq3Q": "Q: Apa indikator alternatif yang baik?",
+    "faq3A": "A: Lingkar pinggang dan rasio lingkar pinggang terhadap tinggi badan efektif untuk mengevaluasi lemak perut.",
+    "faq4Q": "Q: Apakah data tinggi dan berat badan saya disimpan?",
+    "faq4A": "A: Tidak pernah. Seluruh penghitungan berjalan lokal di peramban Anda secara privat.",
+    "reviewDate": "Tinjauan Redaksi: November 2026",
+    "reviewTeam": "Tim Fisiologi & Kesehatan DopaBrain"
   }
 }

@@ -61,5 +61,30 @@
     "stressCheck": "Test de stress",
     "habitTracker": "Suivi d'habitudes",
     "detoxTimer": "Minuteur Détox"
+  },
+  "about": {
+    "summaryTitle": "Guide Santé IMC : Formule, Classification OMS & FAQ",
+    "formulaDesc": "L'Indice de Masse Corporelle (IMC) est un indicateur international calculé selon la formule : poids (kg) / [taille (m)]².",
+    "boundary": "Avertissement médical : L'IMC est un outil indicatif de dépistage et ne remplace en aucun cas un diagnostic médical ou un bilan de composition corporelle.",
+    "categoriesHeading": "Classification OMS pour Adultes",
+    "catUnderweight": "Insuffisance pondérale (< 18.5) :",
+    "descUnderweight": "Peut signaler des carences nutritionnelles ou une fragilité osseuse.",
+    "catNormal": "Poids normal (18.5 – 24.9) :",
+    "descNormal": "Associé au risque statistique le plus bas de complications métaboliques.",
+    "catOverweight": "Surpoids (25.0 – 29.9) :",
+    "descOverweight": "Probabilité accrue d'hypertension artérielle et de fatigue métabolique.",
+    "catObese": "Obésité (≥ 30.0) :",
+    "descObese": "Forte corrélation clinique avec le diabète de type 2 et les douleurs articulaires.",
+    "faqTitle": "Foire Aux Questions (FAQ)",
+    "faq1Q": "Q: Comment calcule-t-on l'IMC ?",
+    "faq1A": "A: On divise le poids en kilos par le carré de la taille en mètres (kg/m²).",
+    "faq2Q": "Q: Pourquoi l'IMC ne mesure-t-il pas le taux de graisse ?",
+    "faq2A": "A: L'IMC ne distingue pas la masse musculaire dense de la masse graisseuse. Un sportif très musclé peut afficher un IMC élevé sans surplus de graisse.",
+    "faq3Q": "Q: Quel autre indicateur utiliser en complément ?",
+    "faq3A": "A: Le tour de taille et le ratio taille/hauteur permettent d'évaluer précisément la graisse viscérale abdominale.",
+    "faq4Q": "Q: Mes mensurations sont-elles conservées ?",
+    "faq4A": "A: Non, jamais. Toutes les données sont calculées instantanément et localement dans votre navigateur.",
+    "reviewDate": "Revue Éditoriale : Novembre 2026",
+    "reviewTeam": "Équipe Physiologie et Santé DopaBrain"
   }
 }

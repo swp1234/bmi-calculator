@@ -61,5 +61,30 @@
     "stressCheck": "Teste de estresse",
     "habitTracker": "Rastreador de hábitos",
     "detoxTimer": "Timer Detox"
+  },
+  "about": {
+    "summaryTitle": "Guia de Saúde IMC: Fórmula, Faixas da OMS e FAQ",
+    "formulaDesc": "O Índice de Massa Corporal (IMC) é um padrão internacional calculado pela fórmula: peso (kg) / [altura (m)]².",
+    "boundary": "Aviso Médico: O IMC é um parâmetro geral de triagem e não substitui uma avaliação médica clínica especializada ou bioimpedância.",
+    "categoriesHeading": "Classificação do IMC para Adultos segundo a OMS",
+    "catUnderweight": "Abaixo do peso (< 18.5):",
+    "descUnderweight": "Pode apontar para desnutrição, deficiências vitamínicas ou baixa densidade óssea.",
+    "catNormal": "Peso normal (18.5 – 24.9):",
+    "descNormal": "Faixa com o menor risco estatístico para doenças crônicas cardiovasculares.",
+    "catOverweight": "Sobrepeso (25.0 – 29.9):",
+    "descOverweight": "Maior tendência a elevação da pressão arterial e sobrecarga metabólica.",
+    "catObese": "Obesidade (≥ 30.0):",
+    "descObese": "Forte associação clínica com diabetes tipo 2 e sobrecarga articular.",
+    "faqTitle": "Perguntas Frequentes (FAQ)",
+    "faq1Q": "Q: Como o IMC é calculado?",
+    "faq1A": "A: Divide-se o peso em quilos pela altura em metros elevada ao quadrado (kg/m²).",
+    "faq2Q": "Q: Por que o IMC não reflete a porcentagem de gordura?",
+    "faq2A": "A: Porque não diferencia massa muscular de gordura corporal. Praticantes de musculação podem ter IMC alto sem excesso de gordura.",
+    "faq3Q": "Q: Que métrica complementar é indicada?",
+    "faq3A": "A: A medição da circunferência da cintura ajuda a monitorar a gordura abdominal visceral.",
+    "faq4Q": "Q: Os meus dados de peso e altura são salvos?",
+    "faq4A": "A: De forma alguma. Todos os cálculos ocorrem 100% no seu navegador sem envio para servidores.",
+    "reviewDate": "Revisão Editorial: Novembro 2026",
+    "reviewTeam": "Equipe de Fisiologia e Saúde DopaBrain"
   }
 }

@@ -1196,3 +1196,24 @@ input:focus-visible,
 [data-theme="light"] .theme-toggle:hover {
     background: rgba(0, 184, 148, 0.2);
 }
+
+/* Educational Health Guide & FAQ Section */
+.about-section { max-width: 480px; margin: 24px auto 16px; padding: 0 16px; box-sizing: border-box; }
+.about-test { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; overflow: hidden; text-align: left; }
+.about-test summary { min-height: 48px; padding: 14px 18px; color: var(--accent, #00b894); cursor: pointer; font-size: 15px; font-weight: 700; list-style: none; display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; touch-action: manipulation; }
+.about-test summary::-webkit-details-marker { display: none; }
+.about-test summary::after { content: '\25BC'; font-size: 11px; color: #a0a0b8; transition: transform 0.25s ease; }
+.about-test[open] summary::after { transform: rotate(180deg); }
+.about-content { padding: 0 18px 20px; box-sizing: border-box; }
+.about-content p { font-size: 13px; line-height: 1.7; color: #cbd5e1; margin: 0 0 12px; }
+.about-note { font-size: 12px; font-style: italic; color: #94a3b8; border-left: 3px solid #00b894; padding-left: 10px; margin: 12px 0 16px; line-height: 1.6; }
+.about-heading { font-size: 15px; color: #fff; margin: 18px 0 10px; font-weight: 700; border-left: 3px solid #00b894; padding-left: 8px; }
+.about-list { list-style: none; padding: 0; margin: 0 0 16px; }
+.about-list li { padding: 6px 0; font-size: 13px; line-height: 1.6; color: #cbd5e1; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.about-list li:last-child { border-bottom: none; }
+.about-list li strong { color: #f1f5f9; font-weight: 600; }
+.faq-section { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.about-faq-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; padding: 12px 14px; }
+.about-faq-q { display: block; font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.about-faq-a { font-size: 12px !important; line-height: 1.6 !important; color: #94a3b8 !important; margin: 0 !important; }
+.about-review-meta { font-size: 11px; color: #64748b; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.08); }

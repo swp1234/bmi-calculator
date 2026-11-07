@@ -61,5 +61,30 @@
     "stressCheck": "Test de estrés",
     "habitTracker": "Seguimiento de hábitos",
     "detoxTimer": "Temporizador Detox"
+  },
+  "about": {
+    "summaryTitle": "Guía de Salud IMC: Fórmula, Rangos de la OMS y Preguntas Frecuentes",
+    "formulaDesc": "El Índice de Masa Corporal (IMC) es un indicador antropométrico internacional calculado mediante la fórmula: peso (kg) / [altura (m)]².",
+    "boundary": "Nota Médica: El IMC es una herramienta orientativa de detección y no sustituye el diagnóstico médico clínico ni el análisis directo de grasa corporal.",
+    "categoriesHeading": "Clasificación del IMC para Adultos según la OMS",
+    "catUnderweight": "Bajo peso (< 18.5):",
+    "descUnderweight": "Puede indicar desnutrición, deficiencias nutricionales o vulnerabilidad inmune.",
+    "catNormal": "Peso normal (18.5 – 24.9):",
+    "descNormal": "Asociado estadísticamente con un menor riesgo de afecciones cardiovasculares y metabólicas.",
+    "catOverweight": "Sobrepeso (25.0 – 29.9):",
+    "descOverweight": "Mayor probabilidad de tensión metabólica y presión arterial elevada.",
+    "catObese": "Obesidad (≥ 30.0):",
+    "descObese": "Correlación clínica significativa con diabetes tipo 2 y afecciones articulares.",
+    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faq1Q": "Q: ¿Cómo se calcula el IMC?",
+    "faq1A": "A: Se divide el peso en kilogramos entre la estatura en metros al cuadrado (kg/m²).",
+    "faq2Q": "Q: ¿Por qué el IMC no mide la grasa corporal directamente?",
+    "faq2A": "A: Porque no diferencia la masa muscular magra de la masa grasa. Los atletas musculosos pueden registrar un IMC elevado sin tener exceso de grasa.",
+    "faq3Q": "Q: ¿Qué otro indicador ayuda a complementar el IMC?",
+    "faq3A": "A: La circunferencia de la cintura y la relación cintura-altura son métricas excelentes para evaluar la grasa visceral.",
+    "faq4Q": "Q: ¿Se almacenan mis medidas corporales?",
+    "faq4A": "A: En absoluto. Todo el procesamiento se realiza de manera 100% local en su navegador.",
+    "reviewDate": "Revisión Editorial: Noviembre 2026",
+    "reviewTeam": "Equipo de Fisiología y Salud DopaBrain"
   }
 }

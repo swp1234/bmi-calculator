@@ -61,5 +61,30 @@
     "stressCheck": "Stres Testi",
     "habitTracker": "Alışkanlık Takipçisi",
     "detoxTimer": "Detoks Zamanlayıcı"
+  },
+  "about": {
+    "summaryTitle": "VKİ Sağlık Rehberi: Formül, DSÖ Aralıkları & SSS",
+    "formulaDesc": "Vücut Kitle İndeksi (VKİ), kilo (kg) / [boy (m)]² formülü ile hesaplanan uluslararası bir sağlık tarama metriğidir.",
+    "boundary": "Tıbbi Not: VKİ genel bir tarama indeksidir; klinik tıbbi teşhis veya doğrudan vücut yağ oranı ölçümü yerine geçmez.",
+    "categoriesHeading": "DSÖ Yetişkin VKİ Sınıflandırması",
+    "catUnderweight": "Zayıf (< 18.5):",
+    "descUnderweight": "Yetersiz beslenme ve bağışıklık zayıflığı riskine işaret edebilir.",
+    "catNormal": "Normal Ağırlık (18.5 – 24.9):",
+    "descNormal": "Kardiyovasküler ve metabolik risklerin en düşük olduğu ideal aralıktır.",
+    "catOverweight": "Fazla Kilolu (25.0 – 29.9):",
+    "descOverweight": "Tansiyon yükselmesi ve metabolik zorlanma ihtimali artabilir.",
+    "catObese": "Obez (≥ 30.0):",
+    "descObese": "Tip 2 diyabet ve eklem yükü ile güçlü klinik korelasyona sahiptir.",
+    "faqTitle": "Sıkça Sorulan Sorular (SSS)",
+    "faq1Q": "Q: VKİ nasıl hesaplanır?",
+    "faq1A": "A: Kilonun (kg), boyun metre cinsinden karesine bölünmesiyle (kg/m²) hesaplanır.",
+    "faq2Q": "Q: VKİ neden yağ oranını doğrudan göstermez?",
+    "faq2A": "A: Yağ dokusu ile yoğun kas kütlesini ayırt edemez. Kaslı sporcular yağsız olsalar bile kilolu görünebilir.",
+    "faq3Q": "Q: Hangi ölçüm VKİ'yi tamamlar?",
+    "faq3A": "A: Bel çevresi ölçümü ve bel-boy oranı, iç organ yağlanmasını izlemede çok etkilidir.",
+    "faq4Q": "Q: Girdiğim boy ve kilo bilgileri kaydediliyor mu?",
+    "faq4A": "A: Kesinlikle hayır. Tüm hesaplamalar tamamen tarayıcınızda güvenle gerçekleşir.",
+    "reviewDate": "Editöryal İnceleme: Kasım 2026",
+    "reviewTeam": "DopaBrain Sağlık ve Fizyoloji Ekibi"
   }
 }
