@@ -83,7 +83,9 @@ class I18n {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.dataset.i18n;
             const translated = this.t(key);
-            element.textContent = translated;
+            if (translated && translated !== key && !element.querySelector('svg')) {
+                element.textContent = translated;
+            }
         });
     }
 
