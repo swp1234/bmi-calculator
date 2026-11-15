@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "已复制！",
-    "twitterText": "我的BMI是{bmi}！在DopaBrain免费测量",
-    "linkCopied": "链接已复制！"
+    "twitterText": "在 DopaBrain BMI 计算器查看 WHO 健康体重范围与代谢建议",
+    "linkCopied": "链接已复制！",
+    "saveCard": "保存故事卡片",
+    "saved": "故事卡片已保存 (1080×1920)！",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 复制链接"
   },
   "related": {
     "title": "探索更多",
@@ -86,5 +90,15 @@
     "faq4A": "A: 绝不。所有运算均在本地浏览器中瞬间完成，不会记录或上传至任何远程服务器。",
     "reviewDate": "内容审阅：2026年11月",
     "reviewTeam": "DopaBrain 健康生理团队"
+  },
+  "curated": {
+    "title": "推荐代谢健康与营养科学书籍",
+    "disclosure": "联盟推广链接",
+    "subtitle": "探索基于临床医学的营养平衡、力量训练与长期健康管理指南。",
+    "cta": "查看图书 ->",
+    "gregerTitle": "如何不节食健康减重 (How Not to Diet) — 迈克尔·格雷格",
+    "gregerDesc": "基于循证医学的营养框架，帮助建立健康代谢平衡与科学体脂管理。",
+    "attiaTitle": "超越百岁 (Outlive) — 彼得·阿蒂亚",
+    "attiaDesc": "涵盖代谢健康、肌肉力量与预防医学核心原理的现代长寿科学经典。"
   }
 }

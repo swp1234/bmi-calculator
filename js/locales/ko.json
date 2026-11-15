@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "복사되었습니다!",
-    "twitterText": "내 BMI는 {bmi}입니다! DopaBrain에서 무료로 측정하세요",
-    "linkCopied": "링크가 복사되었습니다!"
+    "twitterText": "DopaBrain BMI 계산기에서 나의 표준 체중 범위와 건강 지표를 확인해 보세요",
+    "linkCopied": "링크가 복사되었습니다!",
+    "saveCard": "스토리 카드 저장",
+    "saved": "스토리 카드가 저장되었습니다 (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 URL 복사"
   },
   "related": {
     "title": "더 많은 콘텐츠",
@@ -86,5 +90,15 @@
     "faq4A": "A: 절대 저장되지 않습니다. 모든 계산은 브라우저 내부에서만 즉시 처리되며 어떤 외부 서버로도 전송되지 않습니다.",
     "reviewDate": "콘텐츠 검수: 2026년 11월",
     "reviewTeam": "DopaBrain 건강생리학 연구팀"
+  },
+  "curated": {
+    "title": "대사 건강 & 영양 과학 추천 도서",
+    "disclosure": "제휴 링크",
+    "subtitle": "영양 균형, 근력 관리 및 지속 가능한 건강 습관을 위한 의학 기반 추천 도서를 확인하세요.",
+    "cta": "책 보기 ->",
+    "gregerTitle": "어떻게 다이어트 할 것인가 (How Not to Diet) — 마이클 그레거",
+    "gregerDesc": "근거 중심 영양학과 대사 균형을 통한 건강한 체중 관리 과학 가이드.",
+    "attiaTitle": "아웃라이브 (Outlive) — 피터 아티아",
+    "attiaDesc": "대사 건강, 근력 운동 및 수명 연장의 의학적 원리를 다룬 현대 건강 필독서."
   }
 }

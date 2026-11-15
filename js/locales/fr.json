@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Copié!",
-    "twitterText": "Mon IMC est {bmi}! Mesurez le vôtre gratuitement sur DopaBrain",
-    "linkCopied": "Lien copié!"
+    "twitterText": "Calculez votre IMC et votre zone de poids santé OMS gratuitement sur DopaBrain",
+    "linkCopied": "Lien copié!",
+    "saveCard": "Enregistrer la carte",
+    "saved": "Carte enregistrée (1080×1920) !",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Copier le lien"
   },
   "related": {
     "title": "À découvrir",
@@ -86,5 +90,15 @@
     "faq4A": "A: Non, jamais. Toutes les données sont calculées instantanément et localement dans votre navigateur.",
     "reviewDate": "Revue Éditoriale : Novembre 2026",
     "reviewTeam": "Équipe Physiologie et Santé DopaBrain"
+  },
+  "curated": {
+    "title": "Livres recommandés sur la nutrition et le métabolisme",
+    "disclosure": "Liens affiliés",
+    "subtitle": "Ressources médicales sur la nutrition équilibrée, la force musculaire et les habitudes durables.",
+    "cta": "Voir le livre ->",
+    "gregerTitle": "Comment ne pas faire de régime — Michael Greger",
+    "gregerDesc": "Approche nutritionnelle fondée sur les preuves pour un équilibre métabolique durable.",
+    "attiaTitle": "Vivre longtemps et en bonne santé (Outlive) — Peter Attia",
+    "attiaDesc": "Science préventive moderne sur la santé métabolique, la vitalité et la longévité."
   }
 }

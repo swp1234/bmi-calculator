@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "コピーしました！",
-    "twitterText": "私のBMIは{bmi}です！DopaBrainで無料計測",
-    "linkCopied": "リンクをコピーしました！"
+    "twitterText": "DopaBrain BMI計算機で適正体重と健康指標をチェックしよう",
+    "linkCopied": "リンクをコピーしました！",
+    "saveCard": "ストーリーカードを保存",
+    "saved": "ストーリーカードを保存しました (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 URLコピー"
   },
   "related": {
     "title": "もっと楽しむ",
@@ -86,5 +90,15 @@
     "faq4A": "A: 一切保存されません。すべての計算はお使いのブラウザ内で完結します。",
     "reviewDate": "コンテンツ監修：2026年11月",
     "reviewTeam": "DopaBrain 健康生理学チーム"
+  },
+  "curated": {
+    "title": "代謝・栄養科学のおすすめ書籍",
+    "disclosure": "アフィリエイトリンク",
+    "subtitle": "科学的根拠に基づいた栄養バランス、筋力維持、長期的な健康習慣のガイド。",
+    "cta": "詳細を見る ->",
+    "gregerTitle": "How Not to Diet — マイケル・グレガー",
+    "gregerDesc": "代謝バランスと持続可能な健康体重管理のためのエビデンス栄養学。",
+    "attiaTitle": "OUTLIVE 人はどこまで生きられるか — ピーター・アティア",
+    "attiaDesc": "代謝の健康、筋肉量、予防医学の基礎を徹底解説する最新健康科学書。"
   }
 }

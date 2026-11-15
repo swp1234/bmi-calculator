@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     hideLoader();
     setupEventListeners();
     loadHistory();
-    calculateBMI();
+    calculateBMI(false);
     preserveLanguageLinks();
 });
 
@@ -51,7 +51,10 @@ function setupEventListeners() {
     });
 
     // 공유 버튼
-    document.getElementById('share-btn').addEventListener('click', shareBMI);
+    document.getElementById('share-btn')?.addEventListener('click', shareBMI);
+    document.getElementById('save-card-btn')?.addEventListener('click', saveStoryCard);
+    document.getElementById('share-twitter-btn')?.addEventListener('click', shareBMITwitter);
+    document.getElementById('share-url-btn')?.addEventListener('click', copyBMIUrl);
 
     // 언어 선택
     document.getElementById('lang-toggle').addEventListener('click', toggleLanguageMenu);
@@ -59,6 +62,10 @@ function setupEventListeners() {
         btn.addEventListener('click', async (e) => {
             await i18n.setLanguage(e.target.dataset.lang);
             updateUI();
+            if (bmiData) {
+                displayResults(bmiData.bmi, bmiData.height, bmiData.weight);
+                renderCuratedResources();
+            }
             closeLanguageMenu();
         });
     });
@@ -134,7 +141,7 @@ function switchUnit(e) {
 }
 
 // BMI 계산
-function calculateBMI() {
+function calculateBMI(isUserAction = true) {
     const heightInput = document.getElementById('height-input');
     const weightInput = document.getElementById('weight-input');
 
@@ -158,10 +165,12 @@ function calculateBMI() {
     }
 
     bmi = parseFloat(bmi.toFixed(1));
+    const categoryKey = bmi < 18.5 ? 'underweight' : (bmi < 25 ? 'normal' : (bmi < 30 ? 'overweight' : 'obese'));
 
     // 결과 저장
     bmiData = {
         bmi: bmi,
+        categoryKey: categoryKey,
         height: height,
         weight: weight,
         unit: currentUnit,
@@ -170,17 +179,27 @@ function calculateBMI() {
 
     displayResults(bmi, height, weight);
     drawGauge(bmi);
-    addToHistory(bmi, height, weight);
-    // GA4: 도구 사용
-    if (typeof gtag === 'function') {
-        gtag('event', 'tool_use', {
-            tool_name: 'bmi-calculator',
-            action: 'calculate',
-            bmi_value: bmi,
-            unit: currentUnit
-        });
+    renderCuratedResources();
+    if (isUserAction) {
+        addToHistory(bmi, height, weight);
+        if (typeof gtag === 'function') {
+            gtag('event', 'test_start', {
+                event_category: 'bmi_calculator',
+                app_name: 'bmi-calculator'
+            });
+            gtag('event', 'tool_use', {
+                tool_name: 'bmi-calculator',
+                action: 'calculate',
+                result_type: categoryKey,
+                unit: currentUnit
+            });
+            gtag('event', 'test_complete', {
+                event_category: 'bmi_calculator',
+                app_name: 'bmi-calculator',
+                result_type: categoryKey
+            });
+        }
     }
-    recordGA4Event('bmi_calculated', { bmi: bmi });
 }
 
 // 결과 표시
@@ -378,35 +397,242 @@ function clearHistory() {
     }
 }
 
-// BMI 결과 공유
+function getActiveLang() {
+    return (window.i18n && window.i18n.currentLang) || new URLSearchParams(window.location.search).get('lang') || 'en';
+}
+
+function getShareUrl() {
+    return `https://dopabrain.com/bmi-calculator/?lang=${encodeURIComponent(getActiveLang())}&utm_source=share`;
+}
+
+function showBmiToast(msg) {
+    let toast = document.getElementById('bmi-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'bmi-toast';
+        toast.className = 'bmi-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function getAmazonDomain(lang) {
+    const map = { ja: 'amazon.co.jp', de: 'amazon.de', fr: 'amazon.fr', es: 'amazon.es', hi: 'amazon.in' };
+    return map[lang] || 'amazon.com';
+}
+
+function renderCuratedResources() {
+    const container = document.getElementById('curated-resources-card');
+    if (!container || !bmiData) return;
+    const t = (key, fb) => {
+        const val = window.i18n?.t?.(key);
+        return val && val !== key ? val : fb;
+    };
+    const lang = getActiveLang();
+    const domain = getAmazonDomain(lang);
+    const items = [
+        {
+            key: 'howNotToDiet',
+            asin: '1250199220',
+            title: t('curated.gregerTitle', 'How Not to Diet — Michael Greger'),
+            desc: t('curated.gregerDesc', 'Evidence-based nutritional framework for healthy metabolic balance and sustainable body composition.')
+        },
+        {
+            key: 'outlive',
+            asin: '0593236599',
+            title: t('curated.attiaTitle', 'Outlive — Peter Attia'),
+            desc: t('curated.attiaDesc', 'Modern preventive science covering metabolic health, muscle strength, and longevity fundamentals.')
+        }
+    ];
+
+    container.innerHTML = `
+        <div class="curated-resources-header">
+            <h3 class="curated-resources-title">${t('curated.title', 'Recommended Metabolic & Nutrition Books')}</h3>
+            <span class="curated-disclosure">${t('curated.disclosure', 'Affiliate links')}</span>
+        </div>
+        <p class="curated-resources-subtitle">${t('curated.subtitle', 'Explore physician-authored resources on nutrition, strength, and healthy metabolic habits.')}</p>
+        <div class="curated-list">
+            ${items.map(item => `
+                <a class="curated-item" href="https://www.${domain}/dp/${item.asin}?tag=dopabrain-20" target="_blank" rel="noopener sponsored nofollow" data-resource-key="${item.key}">
+                    <div class="curated-item-top">
+                        <span class="curated-item-title">${item.title}</span>
+                        <span class="curated-item-cta">${t('curated.cta', 'View Book ->')}</span>
+                    </div>
+                    <span class="curated-item-desc">${item.desc}</span>
+                </a>
+            `).join('')}
+        </div>`;
+    container.style.display = 'block';
+
+    container.querySelectorAll('.curated-item').forEach(link => {
+        link.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'curated_resource_click', {
+                    app_name: 'bmi-calculator',
+                    resource_key: link.getAttribute('data-resource-key'),
+                    result_type: bmiData.categoryKey || 'normal',
+                    content_locale: lang,
+                    cta_surface: 'curated_resources'
+                });
+                gtag('event', 'content_cta_click', {
+                    cta_type: 'curated_book',
+                    destination: link.getAttribute('href'),
+                    source: 'bmi-calculator'
+                });
+            }
+        });
+    });
+}
+
+function saveStoryCard() {
+    const canvas = document.getElementById('share-canvas');
+    if (!canvas || !bmiData) return;
+    const t = (key, fb) => {
+        const val = window.i18n?.t?.(key);
+        return val && val !== key ? val : fb;
+    };
+    const lang = getActiveLang();
+    canvas.width = 1080;
+    canvas.height = 1920;
+    const ctx = canvas.getContext('2d');
+
+    const grad = ctx.createLinearGradient(0, 0, 1080, 1920);
+    grad.addColorStop(0, '#071418');
+    grad.addColorStop(0.5, '#0c2329');
+    grad.addColorStop(1, '#102a43');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 1080, 1920);
+
+    ctx.fillStyle = 'rgba(0, 184, 148, 0.16)';
+    ctx.beginPath();
+    ctx.arc(880, 280, 260, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.strokeStyle = 'rgba(0, 184, 148, 0.35)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.roundRect(72, 120, 936, 1680, 44);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#55efc4';
+    ctx.font = '700 32px Inter, sans-serif';
+    ctx.fillText('DOPABRAIN HEALTH SCREENING', 540, 235);
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '700 56px Inter, sans-serif';
+    ctx.fillText(t('header.title', 'BMI Calculator'), 540, 330);
+
+    const statusText = document.getElementById('status-text')?.textContent || t(`bmi.${bmiData.categoryKey}`, 'Normal');
+    const emojiText = document.getElementById('status-emoji')?.textContent || '😊';
+    ctx.font = '700 120px Inter, sans-serif';
+    ctx.fillText(emojiText, 540, 560);
+
+    ctx.fillStyle = '#00b894';
+    ctx.font = '800 130px Inter, sans-serif';
+    ctx.fillText(bmiData.bmi.toFixed(1), 540, 740);
+
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '600 34px Inter, sans-serif';
+    ctx.fillText(t('bmi.unit', 'BMI'), 540, 800);
+
+    ctx.fillStyle = 'rgba(0, 184, 148, 0.2)';
+    ctx.beginPath();
+    ctx.roundRect(240, 860, 600, 92, 46);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '700 42px Inter, sans-serif';
+    ctx.fillText(statusText, 540, 920);
+
+    const minText = document.getElementById('min-weight')?.textContent || '';
+    const maxText = document.getElementById('max-weight')?.textContent || '';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+    ctx.beginPath();
+    ctx.roundRect(140, 1050, 800, 250, 28);
+    ctx.fill();
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '600 30px Inter, sans-serif';
+    ctx.fillText(t('bmi.idealWeightTitle', 'Ideal Weight Range'), 540, 1130);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '700 46px Inter, sans-serif';
+    ctx.fillText(`${minText} – ${maxText}`, 540, 1215);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '500 26px Inter, sans-serif';
+    ctx.fillText(t('bmi.idealWeightNote', 'WHO standard normal weight range (BMI 18.5-24.9)'), 540, 1270);
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '600 30px Inter, sans-serif';
+    ctx.fillText('dopabrain.com/bmi-calculator/', 540, 1700);
+
+    try {
+        const a = document.createElement('a');
+        a.download = `bmi-card-${lang}.png`;
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+    } catch (e) {}
+
+    showBmiToast(t('share.saved', 'Story card saved (1080×1920)!'));
+    if (typeof gtag === 'function') {
+        gtag('event', 'save_image', {
+            event_category: 'bmi_calculator',
+            app_name: 'bmi-calculator',
+            result_type: bmiData.categoryKey || 'normal',
+            save_surface: 'result_story_1080x1920'
+        });
+    }
+}
+
+// BMI 결과 공유 (Privacy-first URL without raw numeric score leakage)
 function shareBMI() {
     if (!bmiData) return;
-
-    const text = `나의 BMI는 ${bmiData.bmi}입니다! 🏃‍♂️ BMI 계산기: https://dopabrain.com/bmi-calculator/`;
-
-    // GA4: 결과 공유
-    if (typeof gtag === 'function') {
-        gtag('event', 'share', {
-            method: navigator.share ? 'native' : 'clipboard',
-            app_name: 'bmi-calculator',
-            content_type: 'calculation_result'
-        });
-    }
+    const shareUrl = getShareUrl();
+    const title = (window.i18n?.t?.('header.title') && i18n.t('header.title') !== 'header.title') ? i18n.t('header.title') : 'BMI Calculator';
+    const text = `${title} — ${shareUrl}`;
 
     if (navigator.share) {
-        navigator.share({
-            title: 'BMI 계산기',
-            text: text,
-            url: 'https://dopabrain.com/bmi-calculator/'
-        }).catch(() => {});
+        navigator.share({ title, text, url: shareUrl }).catch(() => {});
+        if (typeof gtag === 'function') {
+            gtag('event', 'share', { method: 'native', content_type: 'bmi_card' });
+        }
     } else {
-        // 폴백: 클립보드에 복사
-        navigator.clipboard.writeText(text).then(() => {
-            alert(i18n.t('share.copied') || '복사되었습니다!');
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            showBmiToast(i18n.t('share.copied') || 'Copied!');
+        }).catch(() => {
+            showBmiToast(i18n.t('share.copied') || 'Copied!');
         });
+        if (typeof gtag === 'function') {
+            gtag('event', 'share', { method: 'copy', content_type: 'bmi_card' });
+        }
     }
+}
 
-    recordGA4Event('bmi_shared');
+function shareBMITwitter() {
+    const shareUrl = getShareUrl();
+    const tpl = i18n.t('share.twitterText');
+    const tweetText = (tpl && tpl !== 'share.twitterText') ? tpl : 'Check your BMI & WHO healthy weight range at DopaBrain';
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(tweetText), '_blank', 'noopener');
+    if (typeof gtag === 'function') {
+        gtag('event', 'share', { method: 'twitter', content_type: 'bmi_card' });
+    }
+}
+
+function copyBMIUrl() {
+    const shareUrl = getShareUrl();
+    navigator.clipboard.writeText(shareUrl).then(() => {
+        showBmiToast(i18n.t('share.copied') || 'Copied!');
+    }).catch(() => {
+        showBmiToast(i18n.t('share.copied') || 'Copied!');
+    });
+    if (typeof gtag === 'function') {
+        gtag('event', 'share', { method: 'url_copy', content_type: 'bmi_card' });
+    }
 }
 
 // 언어 메뉴 토글
@@ -423,9 +649,10 @@ function closeLanguageMenu() {
 // 로더 숨기기
 function hideLoader() {
     const loader = document.getElementById('app-loader');
+    const delay = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 50 : 300;
     setTimeout(() => {
         loader.classList.add('hidden');
-    }, 500);
+    }, delay);
 }
 
 // UI 업데이트

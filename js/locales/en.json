@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Copied!",
-    "twitterText": "My BMI is {bmi}! Measure yours free at DopaBrain",
-    "linkCopied": "Link copied!"
+    "twitterText": "Check your BMI & WHO healthy weight range free at DopaBrain",
+    "linkCopied": "Link copied!",
+    "saveCard": "Save Story Card",
+    "saved": "Story card saved (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Copy URL"
   },
   "related": {
     "title": "More to Explore",
@@ -86,5 +90,15 @@
     "faq4A": "A: Never. Calculations occur 100% locally on your device within your browser. No private biometric data is logged or sent to external servers.",
     "reviewDate": "Editorial Review: November 2026",
     "reviewTeam": "DopaBrain Health & Physiology Team"
+  },
+  "curated": {
+    "title": "Recommended Metabolic & Nutrition Books",
+    "disclosure": "Affiliate links",
+    "subtitle": "Explore physician-authored resources on nutrition, strength, and healthy metabolic habits.",
+    "cta": "View Book ->",
+    "gregerTitle": "How Not to Diet — Michael Greger",
+    "gregerDesc": "Evidence-based nutritional framework for healthy metabolic balance and sustainable body composition.",
+    "attiaTitle": "Outlive — Peter Attia",
+    "attiaDesc": "Modern preventive science covering metabolic health, muscle strength, and longevity fundamentals."
   }
 }

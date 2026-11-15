@@ -121,3 +121,4 @@ class I18n {
 
 // 전역 인스턴스
 const i18n = new I18n();
+window.i18n = i18n;

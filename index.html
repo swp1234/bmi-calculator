@@ -7,7 +7,7 @@
     <meta name="robots" content="max-image-preview:large">
     <title>BMI Calculator - Free Body Mass Index Check | DopaBrain</title>
     <meta name="description" content="Instant BMI calculator — enter your height and weight to get your Body Mass Index, health classification, ideal weight range, and wellness tips. Try free!">
-    <meta name="dateModified" content="2026-11-07">
+    <meta name="dateModified" content="2026-11-15">
     <meta name="keywords" content="BMI 계산기, 체질량지수, 체중 관리, 건강, 신체 지수, 이상적 체중, 건강 정보, 피트니스, 건강 계산기">
     <link rel="canonical" href="https://dopabrain.com/bmi-calculator/">
     <meta name="theme-color" content="#e74c3c">
@@ -281,10 +281,16 @@
                 </div>
 
                 <!-- 결과 공유 -->
-                <div class="share-section" style="text-align:center;margin:16px 0;">
-                    <button class="btn btn-secondary" id="share-btn" data-i18n="bmi.shareBtn" onclick="shareApp()">📤 결과 공유</button>
-                    <button class="btn" onclick="shareTwitter()" style="background:#1da1f2;color:white;border:none;min-height:44px;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;margin:4px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;">𝕏 Twitter</button>
+                <div class="share-section">
+                    <button class="btn btn-secondary" id="share-btn" data-i18n="bmi.shareBtn">📤 결과 공유</button>
+                    <button class="btn btn-story" id="save-card-btn" type="button">📸 <span data-i18n="share.saveCard">Save Story Card</span></button>
+                    <button class="btn btn-twitter" id="share-twitter-btn" type="button">𝕏 <span data-i18n="share.twitterBtn">Twitter</span></button>
+                    <button class="btn btn-url" id="share-url-btn" type="button" data-i18n="share.copyUrl">📋 Copy URL</button>
                 </div>
+                <canvas id="share-canvas" width="1080" height="1920" style="display:none;"></canvas>
+
+                <!-- 추천 도서 -->
+                <div class="curated-resources-card" id="curated-resources-card" style="display:none;"></div>
             </div>
 
             <!-- BMI 분류 정보 카드 -->
@@ -381,38 +387,6 @@
 
     <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
-
-    <script>
-        function shareApp() {
-            const url = window.location.href;
-            const bmiVal = document.getElementById('bmi-value') ? document.getElementById('bmi-value').textContent : '';
-            const statusText = document.getElementById('status-text') ? document.getElementById('status-text').textContent : '';
-            const shareTitle = bmiVal ? 'BMI ' + bmiVal + ' - ' + statusText + ' | DopaBrain BMI 계산기' : document.title;
-            if (navigator.share) {
-                navigator.share({ title: shareTitle, url }).catch(() => {});
-            } else {
-                navigator.clipboard.writeText(url).then(() => {
-                    typeof showToast === 'function' ? showToast('링크 복사됨!') : alert(window.i18n && i18n.t ? (i18n.t('share.linkCopied') || '링크가 복사되었습니다!') : '링크가 복사되었습니다!');
-                }).catch(() => { prompt('Copy:', url); });
-            }
-        }
-        function shareTwitter() {
-            const bmiVal = document.getElementById('bmi-value') ? document.getElementById('bmi-value').textContent : '';
-            const statusText = document.getElementById('status-text') ? document.getElementById('status-text').textContent : '';
-            let tweetText;
-            if (bmiVal && window.i18n && i18n.t) {
-                const template = i18n.t('share.twitterText');
-                tweetText = template && template !== 'share.twitterText'
-                    ? template.replace('{bmi}', bmiVal)
-                    : 'My BMI is ' + bmiVal + ' (' + statusText + ') - DopaBrain BMI Calculator';
-            } else {
-                tweetText = document.title + ' - DopaBrain';
-            }
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent(tweetText);
-            window.open('https://twitter.com/intent/tweet?url=' + url + '&text=' + text, '_blank');
-        }
-    </script>
 
     <!-- Service Worker 등록 -->
     <script>

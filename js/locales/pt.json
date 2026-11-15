@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Copiado!",
-    "twitterText": "Meu IMC é {bmi}! Meça o seu grátis no DopaBrain",
-    "linkCopied": "Link copiado!"
+    "twitterText": "Calcule seu IMC e a faixa de peso ideal OMS grátis na DopaBrain",
+    "linkCopied": "Link copiado!",
+    "saveCard": "Salvar card (Story)",
+    "saved": "Card salvo (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Copiar link"
   },
   "related": {
     "title": "Explore mais",
@@ -86,5 +90,15 @@
     "faq4A": "A: De forma alguma. Todos os cálculos ocorrem 100% no seu navegador sem envio para servidores.",
     "reviewDate": "Revisão Editorial: Novembro 2026",
     "reviewTeam": "Equipe de Fisiologia e Saúde DopaBrain"
+  },
+  "curated": {
+    "title": "Livros recomendados de nutrição e metabolismo",
+    "disclosure": "Links de afiliado",
+    "subtitle": "Guias escritos por médicos sobre nutrição equilibrada, força muscular e saúde metabólica.",
+    "cta": "Ver livro ->",
+    "gregerTitle": "Comer para Não Engordar — Michael Greger",
+    "gregerDesc": "Estrutura nutricional baseada em evidências para equilíbrio metabólico e composição saudável.",
+    "attiaTitle": "Outlive — Peter Attia",
+    "attiaDesc": "Ciência preventiva moderna sobre saúde metabólica, força física e longevidade."
   }
 }

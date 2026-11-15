@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Kopiert!",
-    "twitterText": "Mein BMI ist {bmi}! Kostenlos auf DopaBrain messen",
-    "linkCopied": "Link kopiert!"
+    "twitterText": "Berechne deinen BMI und dein WHO-Idealgewicht kostenlos bei DopaBrain",
+    "linkCopied": "Link kopiert!",
+    "saveCard": "Story-Karte speichern",
+    "saved": "Story-Karte gespeichert (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Link kopieren"
   },
   "related": {
     "title": "Mehr entdecken",
@@ -86,5 +90,15 @@
     "faq4A": "A: Niemals. Die Berechnung erfolgt rein lokal und privat in Ihrem Browser.",
     "reviewDate": "Redaktionelle Prüfung: November 2026",
     "reviewTeam": "DopaBrain Gesundheitsteam"
+  },
+  "curated": {
+    "title": "Empfohlene Bücher zu Stoffwechsel & Ernährung",
+    "disclosure": "Affiliate-Links",
+    "subtitle": "Wissenschaftlich fundierte Ratgeber zu Ernährung, Muskelkraft und langfristiger Stoffwechselgesundheit.",
+    "cta": "Buch ansehen ->",
+    "gregerTitle": "How Not to Diet — Michael Greger",
+    "gregerDesc": "Evidenzbasierter Ernährungsansatz für gesunde Stoffwechselbalance und nachhaltiges Gewichtsmanagement.",
+    "attiaTitle": "Outlive — Peter Attia",
+    "attiaDesc": "Moderne Präventivmedizin über Stoffwechselgesundheit, Krafttraining und Langlebigkeit."
   }
 }

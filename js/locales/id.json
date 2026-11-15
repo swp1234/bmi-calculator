@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Disalin!",
-    "twitterText": "BMI saya {bmi}! Ukur milikmu gratis di DopaBrain",
-    "linkCopied": "Tautan disalin!"
+    "twitterText": "Cek kisaran berat badan sehat standar WHO gratis di Kalkulator BMI DopaBrain",
+    "linkCopied": "Tautan disalin!",
+    "saveCard": "Simpan Kartu Story",
+    "saved": "Kartu story tersimpan (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Salin Tautan"
   },
   "related": {
     "title": "Jelajahi lainnya",
@@ -86,5 +90,15 @@
     "faq4A": "A: Tidak pernah. Seluruh penghitungan berjalan lokal di peramban Anda secara privat.",
     "reviewDate": "Tinjauan Redaksi: November 2026",
     "reviewTeam": "Tim Fisiologi & Kesehatan DopaBrain"
+  },
+  "curated": {
+    "title": "Buku Rekomendasi Nutrisi & Metabolisme",
+    "disclosure": "Tautan afiliasi",
+    "subtitle": "Panduan berbasis riset medis tentang nutrisi seimbang, kekuatan otot, dan kebiasaan sehat.",
+    "cta": "Lihat Buku ->",
+    "gregerTitle": "How Not to Diet — Michael Greger",
+    "gregerDesc": "Kerangka nutrisi berbasis bukti ilmiah untuk keseimbangan metabolisme dan berat badan sehat.",
+    "attiaTitle": "Outlive — Peter Attia",
+    "attiaDesc": "Ilmu kedokteran preventif modern tentang kesehatan metabolik, kekuatan fisik, dan umur panjang."
   }
 }

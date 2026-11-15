@@ -51,8 +51,12 @@
   },
   "share": {
     "copied": "Kopyalandı!",
-    "twitterText": "BMI'm {bmi}! DopaBrain'de ücretsiz ölçün",
-    "linkCopied": "Bağlantı kopyalandı!"
+    "twitterText": "DopaBrain VKİ Hesaplayıcı ile DSÖ sağlıklı kilo aralığını ücretsiz öğren",
+    "linkCopied": "Bağlantı kopyalandı!",
+    "saveCard": "Hikaye Kartını Kaydet",
+    "saved": "Hikaye kartı kaydedildi (1080×1920)!",
+    "twitterBtn": "Twitter",
+    "copyUrl": "📋 Bağlantıyı Kopyala"
   },
   "related": {
     "title": "Daha fazla keşfet",
@@ -86,5 +90,15 @@
     "faq4A": "A: Kesinlikle hayır. Tüm hesaplamalar tamamen tarayıcınızda güvenle gerçekleşir.",
     "reviewDate": "Editöryal İnceleme: Kasım 2026",
     "reviewTeam": "DopaBrain Sağlık ve Fizyoloji Ekibi"
+  },
+  "curated": {
+    "title": "Önerilen Beslenme ve Metabolizma Kitapları",
+    "disclosure": "Satış ortaklığı bağlantıları",
+    "subtitle": "Dengeli beslenme, kas gücü ve sürdürülebilir metabolik sağlık için tıp temelli rehberler.",
+    "cta": "Kitabı İncele ->",
+    "gregerTitle": "Diyet Yapmadan Zayıflamak (How Not to Diet) — Michael Greger",
+    "gregerDesc": "Sağlıklı metabolik denge ve kalıcı vücut kompozisyonu için kanıta dayalı beslenme rehberi.",
+    "attiaTitle": "Outlive — Peter Attia",
+    "attiaDesc": "Metabolik sağlık, fiziksel güç ve uzun ömür bilimi üzerine modern önleyici tıp kitabı."
   }
 }
