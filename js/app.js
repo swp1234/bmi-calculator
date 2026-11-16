@@ -390,11 +390,22 @@ function loadHistory() {
 }
 
 // 히스토리 삭제
+let _bmiClearConfirmTimer = null;
 function clearHistory() {
-    if (confirm(i18n.t('history.confirmClear') || '정말 삭제하시겠습니까?')) {
-        localStorage.removeItem('bmiHistory');
-        loadHistory();
+    const clearBtn = document.getElementById('clear-history-btn') || document.querySelector('[onclick*="clearHistory"]');
+    if (clearBtn && !clearBtn.dataset.confirmPending) {
+        clearBtn.dataset.confirmPending = '1';
+        showBmiToast(i18n.t('history.confirmClear') || 'Tap again to clear all history.');
+        clearTimeout(_bmiClearConfirmTimer);
+        _bmiClearConfirmTimer = setTimeout(() => {
+            if (clearBtn) delete clearBtn.dataset.confirmPending;
+        }, 3000);
+        return;
     }
+    if (clearBtn) delete clearBtn.dataset.confirmPending;
+    clearTimeout(_bmiClearConfirmTimer);
+    localStorage.removeItem('bmiHistory');
+    loadHistory();
 }
 
 function getActiveLang() {
