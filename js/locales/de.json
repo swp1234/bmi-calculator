@@ -100,5 +100,11 @@
     "gregerDesc": "Evidenzbasierter Ernährungsansatz für gesunde Stoffwechselbalance und nachhaltiges Gewichtsmanagement.",
     "attiaTitle": "Outlive — Peter Attia",
     "attiaDesc": "Moderne Präventivmedizin über Stoffwechselgesundheit, Krafttraining und Langlebigkeit."
+  },
+  "nextStep": {
+    "label": "Empfohlener nächster Schritt",
+    "title": "Stresslevel-Check & 7-Tage-Plan",
+    "desc": "Prüfe deine Stressbalance in 5 Bereichen und erstelle deinen privaten 7-Tage-Plan.",
+    "cta": "Stresstest starten →"
   }
 }

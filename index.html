@@ -148,6 +148,9 @@
       ]
     }
     </script>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 </head>
 <body>
     <div class="app-loader" id="app-loader">
@@ -290,7 +293,19 @@
                 <canvas id="share-canvas" width="1080" height="1920" style="display:none;"></canvas>
 
                 <!-- 추천 도서 -->
-                <div class="curated-resources-card" id="curated-resources-card" style="display:none;"></div>
+                        <section class="next-step-card" id="nextStepCard" aria-label="Stress Level Check & 7-Day Plan">
+            <p class="next-step-label" data-i18n="nextStep.label">Recommended Next Step</p>
+            <div class="next-step-main">
+                <span class="next-step-emoji" aria-hidden="true">⚡</span>
+                <div class="next-step-content">
+                    <h4 class="next-step-title" data-i18n="nextStep.title">Stress Level Check & 7-Day Plan</h4>
+                    <p class="next-step-desc" data-i18n="nextStep.desc">Check your current stress balance across 5 areas and build a private 7-day reset plan.</p>
+                </div>
+            </div>
+            <a href="/stress-check/?lang=en&amp;start=1&amp;source=bmi_calculator_result" class="next-step-cta" id="nextStepCta" data-i18n="nextStep.cta">Take Stress Check →</a>
+        </section>
+
+<div class="curated-resources-card" id="curated-resources-card" style="display:none;"></div>
             </div>
 
             <!-- BMI 분류 정보 카드 -->
@@ -409,5 +424,35 @@
       </div>
     </div>
     <script src="/portal/js/cross-promo.js" defer></script>
+
+    <script>
+      (function () {
+        var cta = document.getElementById('nextStepCta');
+        if (!cta) return;
+        function syncHref() {
+          var lang = (window.i18n && (window.i18n.currentLang || (typeof window.i18n.getCurrentLanguage === 'function' && window.i18n.getCurrentLanguage())))
+            || new URLSearchParams(window.location.search).get('lang')
+            || document.documentElement.lang
+            || 'en';
+          try {
+            var u = new URL(cta.getAttribute('href'), window.location.origin);
+            u.searchParams.set('lang', lang);
+            u.searchParams.set('source', 'bmi_calculator_result');
+            cta.setAttribute('href', u.pathname + u.search);
+          } catch (e) {}
+        }
+        syncHref();
+        cta.addEventListener('click', function () {
+          syncHref();
+          if (typeof gtag === 'function') {
+            gtag('event', 'content_cta_click', {
+              cta_surface: 'next_step_hero',
+              destination: cta.getAttribute('href'),
+              source: 'bmi_calculator_result'
+            });
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

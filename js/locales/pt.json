@@ -100,5 +100,11 @@
     "gregerDesc": "Estrutura nutricional baseada em evidências para equilíbrio metabólico e composição saudável.",
     "attiaTitle": "Outlive — Peter Attia",
     "attiaDesc": "Ciência preventiva moderna sobre saúde metabólica, força física e longevidade."
+  },
+  "nextStep": {
+    "label": "Próximo passo recomendado",
+    "title": "Teste de Estresse e Plano 7 Dias",
+    "desc": "Avalie seu equilíbrio de estresse em 5 áreas e monte um plano gratuito de 7 dias.",
+    "cta": "Fazer Teste de Estresse →"
   }
 }

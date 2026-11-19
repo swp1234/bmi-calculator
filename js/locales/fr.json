@@ -100,5 +100,11 @@
     "gregerDesc": "Approche nutritionnelle fondée sur les preuves pour un équilibre métabolique durable.",
     "attiaTitle": "Vivre longtemps et en bonne santé (Outlive) — Peter Attia",
     "attiaDesc": "Science préventive moderne sur la santé métabolique, la vitalité et la longévité."
+  },
+  "nextStep": {
+    "label": "Prochaine étape recommandée",
+    "title": "Test de Stress & Plan 7 Jours",
+    "desc": "Évaluez votre équilibre de stress sur 5 axes et recevez un plan sur 7 jours.",
+    "cta": "Tester mon stress →"
   }
 }
